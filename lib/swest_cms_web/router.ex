@@ -17,9 +17,12 @@ defmodule SwestCmsWeb.Router do
   scope "/", SwestCmsWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", MainPage
     live "/light", LightLive
     live "/markdown", MarkdownEditor
+    live "/main", MainPage
+    live "/admin", AdminPage
+    live "/event", EventPage
   end
 
   # Other scopes may use custom stacks.
