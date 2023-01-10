@@ -18,6 +18,7 @@ defmodule SwestCmsWeb.MainPage do
     <h1 class="text-3lx font-bold underline">
     Hello world!
     </h1>
+    <button class="btn">button</button>
     <a phx-click="page1">swestとは</a> /
     <a phx-click="page2">開催案内</a> /
     <a phx-click="page3">プログラム</a> /
