@@ -23,7 +23,8 @@ config :swest_cms, SwestCmsWeb.Endpoint,
   secret_key_base: "cU8Anu+2s/46cwXcnjpQ4DWEJBHbm4RUaPBD7uXbynCdTaUxzUWMtH97SDZysEvM",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
-    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
+    esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]},
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
   ]
 
 # ## SSL Support
