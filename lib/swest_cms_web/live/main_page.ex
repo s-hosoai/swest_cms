@@ -5,7 +5,7 @@ defmodule SwestCmsWeb.MainPage do
     page1: "# SWEST(エスウエスト)とは\n swestとは・・・",
     page2: "# SWEST24開催案内 \n 2023/09/xx-xx",
     page3: "# プログラム \n プログラム1、2、3",
-    page4: "# スポンサー\n スポンサー様"
+    page4: "# スポンサー\n スポンサーリスト"
   }
 
   def mount(_params, _session, socket) do
@@ -15,15 +15,14 @@ defmodule SwestCmsWeb.MainPage do
 
   def render(assigns) do
     ~H"""
-    <h1 class="text-3lx font-bold underline">
-    Hello world!
-    </h1>
-    <button class="btn">button</button>
-    <a phx-click="page1">swestとは</a> /
-    <a phx-click="page2">開催案内</a> /
-    <a phx-click="page3">プログラム</a> /
-    <a phx-click="page4">スポンサー</a> /
+    <div class="tabs">
+      <a class="tab tab-active" phx-click="page1">swestとは</a>
+      <a class="tab"  phx-click="page2">開催案内</a>
+      <a class="tab"  phx-click="page3">プログラム</a>
+      <a class="tab"  phx-click="page4">スポンサー</a>
+    </div>
     <%= raw @rawhtml %>
+
     """
   end
 

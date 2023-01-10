@@ -15,12 +15,22 @@ defmodule SwestCmsWeb.AdminPage do
 
   def render(assigns) do
     ~H"""
-    <h1>管理ページ</h1>
-    <a phx-click="page1">ページ一覧・編集</a> /
-    <a phx-click="page2">プログラム管理</a> /
-    <a phx-click="page3">参加者管理</a> /
-    <a phx-click="page4">ポスター管理</a> /
-    <%= raw @rawhtml %>
+    <div class="flex flex-row w-full">
+      <div class="grid flex-grow ">
+        <ul class="menu w-64 border bg-base-100 rounded-box">
+          <li>
+          <a phx-click="page1">タスク管理</a>
+          </li>
+          <li>
+          <a phx-click="page2">Webページ管理</a>
+          </li>
+          <li>
+          <a phx-click="page3">ユーザ管理</a>
+          </li>
+        </ul>
+      </div>
+      <div class="grid flex-grow "><%= raw @rawhtml %></div>
+    </div>
     """
   end
 
