@@ -23,6 +23,12 @@ defmodule SwestCmsWeb.Router do
     live "/main", MainPage
     live "/admin", AdminPage
     live "/event", EventPage
+
+    get "/cms_hp", CmsHpController, :index
+    get "/cms_event", CmsEventController, :index
+    get "/user", UserManagementController, :index
+    get "/todo", TodoController, :index
+    get "/schedule", ScheduleController, :index
   end
 
   # Other scopes may use custom stacks.

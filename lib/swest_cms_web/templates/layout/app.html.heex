@@ -1,5 +1,60 @@
 <main class="container">
   <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
   <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-  <%= @inner_content %>
+
+  <div class="bg-base-100 drawer drawer-mobile">
+  <input id="drawer" type="checkbox" class="drawer-toggle">
+  <div class="drawer-content" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
+    <div
+      class="sticky top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 \n  bg-base-100 text-base-content\n  ">
+      <nav class="navbar w-full">
+      </nav>
+    </div>
+    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
+
+    <div class="px-6 xl:pr-2 pb-16">
+      <div class="flex flex-col-reverse justify-between gap-6 xl:flex-row">
+        <div class="prose w-full max-w-4xl flex-grow">
+          <%= @inner_content %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="drawer-side" style="scroll-behavior: smooth; scroll-padding-top: 5rem;">
+    <label for="drawer" class="drawer-overlay"></label>
+    <aside class="bg-base-200 w-40">
+      <div
+        class="z-20 bg-base-200 bg-opacity-90 backdrop-blur sticky top-0 items-center gap-2 px-4 py-2 hidden lg:flex ">
+        <a href="/" aria-current="page" aria-label="Homepage" class="flex-0 btn btn-ghost px-2">
+          <div class="font-title text-primary inline-flex text-lg transition-all duration-200 md:text-3xl"><span
+              class="lowercase">SWEST</span>
+          </div>
+        </a>
+      </div>
+      <div class="h-4"></div>
+      <ul class="menu menu-compact flex flex-col p-0 px-4">
+        <li><a sveltekit:prefetch href="/cms_hp" id="" class="flex gap-4   ">
+            <span class="flex-1">ウェブサイト編集</span>
+          </a>
+        </li>
+        <li><a sveltekit:prefetch href="/cms_event" id="" class="flex gap-4   ">
+            <span class="flex-1">当日サイト編集</span>
+          </a>
+        </li>
+        <li><a sveltekit:prefetch href="/todo" id="" class="flex gap-4   ">
+            <span class="flex-1">Task</span>
+            </a>
+        </li>
+        <li><a sveltekit:prefetch href="/schedule" id="" class="flex gap-4   ">
+            <span class="flex-1">Schedule</span>
+          </a>
+        </li>
+        <li><a sveltekit:prefetch href="/user" id="" class="flex gap-4   ">
+            <span class="flex-1">User Management</span>
+          </a>
+        </li>
+      </ul>
+    </aside>
+  </div>
+</div>
 </main>
