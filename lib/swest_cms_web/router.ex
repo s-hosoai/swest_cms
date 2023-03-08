@@ -17,17 +17,19 @@ defmodule SwestCmsWeb.Router do
   scope "/", SwestCmsWeb do
     pipe_through :browser
 
-    live "/", MainPage
+    # live "/", MainPage
     live "/light", LightLive
     live "/markdown", MarkdownEditor
     live "/main", MainPage
     live "/admin", AdminPage
     live "/event", EventPage
+    live "/todo", TodoPage
 
+    get "/", TodoController, :index
     get "/cms_hp", CmsHpController, :index
     get "/cms_event", CmsEventController, :index
     get "/user", UserManagementController, :index
-    get "/todo", TodoController, :index
+    # get "/todo", TodoController, :index
     get "/schedule", ScheduleController, :index
   end
 
